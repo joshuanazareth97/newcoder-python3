@@ -11,7 +11,7 @@ import csv
 MY_FILE = "sample_sfpd_incident_all.csv"
 
 def csv2json(raw_file, delimiter=","):
-    """Parses raw CSV file and returns JSON-like object."""
+    """Parses raw CSV file and returns JSON-like structure (list of dicts)."""
     #Open the CSV file and read the data
     with open(raw_file) as file:
         data = csv.reader(file,delimiter=delimiter)
