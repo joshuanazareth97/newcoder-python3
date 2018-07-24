@@ -20,8 +20,7 @@ def csv2json(raw_file, delimiter=","):
         parsed = [dict(zip(header,row)) for row in data]
     return parsed
 
-
-if __name__ == "__main__":
+def main():
     filename = input("Enter filename to parse: ")
     try:
         result = csv2json(filename)
@@ -43,3 +42,6 @@ if __name__ == "__main__":
         filename = input("Enter filename to store (without extension): ") + ".json"
         with open(filename, "w") as f:
             f.write(json.dumps(result))
+
+if __name__ == "__main__":
+    main()
