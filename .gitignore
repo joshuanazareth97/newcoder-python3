@@ -1,0 +1,6 @@
+*.pyc
+.idea
+.coverage
+htmlcov
+settings.ini
+twistd.pid
