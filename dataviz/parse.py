@@ -21,6 +21,7 @@ def csv2json(raw_file, delimiter=","):
     return parsed
 
 def main():
+    """Handles script being run directly without import."""
     filename = input("Enter filename to parse: ")
     try:
         result = csv2json(filename)
