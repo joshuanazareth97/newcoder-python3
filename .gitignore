@@ -4,3 +4,4 @@
 htmlcov
 settings.ini
 twistd.pid
+dv_venv/
