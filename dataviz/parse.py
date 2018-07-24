@@ -24,8 +24,22 @@ def csv2json(raw_file, delimiter=","):
 if __name__ == "__main__":
     filename = input("Enter filename to parse: ")
     try:
-        for line in csv2json(filename):
-            print(line)
+        result = csv2json(filename)
     except:
         print("Could not find the file, or found the file but could not parse. \nExiting...")
         exit(0)
+    print("File parsed.\nEnter (1) to save to external JSON or (2) to print : ")
+    choice = 0
+    try:
+        while(choice!=1 and choice!=2):
+            choice = int(input())
+    except:
+        print("Enter valid number WITHOUT parentheses")
+    if(choice-1):
+        for line in result:
+            print(line)
+    else:
+        import json
+        filename = input("Enter filename to store (without extension): ") + ".json"
+        with open(filename, "w") as f:
+            f.write(json.dumps(result))
